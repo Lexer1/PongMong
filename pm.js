@@ -32,10 +32,10 @@ function Pong() {
 
     var asteroids = new Array();
     var x = canvasWidth / 2;
-    var y = 20 + (Math.random() * (canvasHeight - 40));
-    var vX = 15;
+    var y = 50 + (Math.random() * (canvasHeight - 30));
+    var vX = 5;
     var vY = 5;
-    var radius = 20;
+    var radius = 10;
     asteroids.push(new Asteroid(x, y, radius, vX, vY));
 
 
@@ -54,10 +54,10 @@ function Pong() {
     };
 
     var iSols = new Array();
-    iSols.push(new icadSolx(canvasHeight / 3, 150, 0));
+    iSols.push(new icadSolx(canvasHeight / 2.5, 100, 0));
 
     var iSags = new Array();
-    iSags.push(new icadSagx(canvasHeight / 3, 150, 0));
+    iSags.push(new icadSagx(canvasHeight / 2.5, 100, 0));
 
 
 
@@ -67,7 +67,7 @@ function Pong() {
 
     var icadSol = function (ctx, konum, yasla, yuk) {
         ctx.beginPath();
-        ctx.rect((yasla - yasla+5), konum, 25, yuk);
+        ctx.rect((yasla - yasla-5), konum, 25, yuk);
         ctx.fillStyle = "#fff";
         ctx.lineWidth = 1;
         ctx.fill();
@@ -75,7 +75,7 @@ function Pong() {
 
     var icadSag = function (ctx, konum, yasla, yuk) {
         ctx.beginPath();
-        ctx.rect(yasla - 30, konum, 25, yuk);
+        ctx.rect(yasla - 30, konum, 20, yuk);
         ctx.fillStyle = "#fff";
         ctx.lineWidth = 1;
         ctx.fill();
@@ -188,13 +188,13 @@ function Pong() {
 
 function PuanSol(ctx, Puan, konum) {
     ctx.fillStyle = '#000';
-    ctx.font = 'italic bold 30px sans-serif';
+    ctx.font = 'Arial,800,FontStyle.Underline';
     ctx.textBaseline = 'bottom';
     ctx.fillText(Puan, 4, konum + 10);
 }
 function PuanSag(ctx, cw, Puan, konum) {
     ctx.fillStyle = '#000';
-    ctx.font = 'italic bold 30px sans-serif';
+    ctx.font = 'Arial,800,FontStyle.Underline';
     ctx.textBaseline = 'bottom';
     ctx.fillText(Puan, cw - 25, konum + 10);
 }
@@ -205,7 +205,7 @@ function Topac(context, x, y, radius) {
     context.beginPath();
     context.arc(x, y, radius, 0, Math.PI * 2, false);
     context.closePath();
-    context.fillStyle = "red";
+    context.fillStyle = "white";
     context.fill();
 }
 
